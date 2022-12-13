@@ -1,3 +1,4 @@
+import random
 
 def newGen(p1, p2, prob):
     c1 = [0] * 4        
