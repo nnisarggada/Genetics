@@ -41,4 +41,9 @@ def simulate(n, prob):
         trials.append(sim(prob))
     return (sum(trials)/n)
 
-print(simulate(100, 0.0))
+numOfSims = int(input("Enter number of simulations: "))
+mutationProb = float(input("Enter the probability of mutation: "))
+
+answer = simulate(numOfSims, mutationProb)
+print(" ")
+print(f"The offsprings will be the exact same after {answer} generations")
