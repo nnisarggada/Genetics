@@ -1,10 +1,9 @@
 import random
 from matplotlib import pyplot as plt
 
-def newGen(p1, p2, prob):
+chromosomes = int(input("Enter number of chromosomes: "))
 
-    global chromosomes
-    chromosomes = 4
+def newGen(p1, p2, prob):
 
     c1 = [0] * chromosomes    
     c2 = [0] * chromosomes
@@ -24,15 +23,19 @@ def newGen(p1, p2, prob):
 
 def sim(prob):
 
-    p1 = [1, 2, 3, 4]
-    p2 = [5, 6, 7, 8]
+    p1 = [0] * chromosomes
+    p2 = [0] * chromosomes
+    
+    for i in range(chromosomes):
+        p1[i] = random.randrange(9)
+
+    for i in range(chromosomes):
+        p2[i] = random.randrange(9)
+
     generations = 0
 
     while (True):
         c1, c2 = newGen(p1, p2, prob)
-        # print(c1)
-        # print(c2)
-        # print(" ")
         p1 = c1
         p2 = c2
         generations += 1
