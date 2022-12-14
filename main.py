@@ -60,11 +60,19 @@ mutationProb = float(input("Enter the probability of mutation: "))
 
 answer = simulate(numOfSims, mutationProb)
 print(" ")
-print(f"The offsprings will be the exact same after {answer} generations")
 
-lines = plt.plot(x,y)
-plt.setp(lines, color = 'r', linewidth = 1)
-plt.title(f"Number of generations after which both offsprings are exactly the same (Mutation Probability: {mutationProb*100}%)\n\nAverage: {answer} generations\n\n")
-plt.xlabel("Simulation Number")
-plt.ylabel("Number of Generations")
-plt.show()
+showGraph = input("Do you want to see the graph? [Type 'y' or 'n']: ")
+
+if (showGraph == "n"):
+    print(" ")
+    print(f"The offsprings will be the exact same after {answer} generations with mutation probability being {mutationProb*100}%")
+
+elif (showGraph == "y"):
+    lines = plt.plot(x,y)
+    plt.setp(lines, color = 'r', linewidth = 1)
+    plt.title(f"Number of generations after which both offsprings are exactly the same (Mutation Probability: {mutationProb*100}%)\n\nAverage: {answer} generations\n\n")
+    plt.xlabel("Simulation Number")
+    plt.ylabel("Number of Generations")
+    plt.show()
+else:
+    print("Incorrect input :/")
