@@ -1,3 +1,5 @@
+#SOF
+
 import random
 from matplotlib import pyplot as plt
 
@@ -76,3 +78,5 @@ elif (showGraph == "y"):
     plt.show()
 else:
     print("Incorrect input :/")
+
+# EOF
